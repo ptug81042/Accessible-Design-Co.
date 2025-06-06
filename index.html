@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Design Co</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main Navigation">
+            <div class="logo">
+                <h1>Accessible Design Co</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <h2>Designing for Everyone</h2>
+            <p>Creating accessible and inclusive designs for a better world.</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <p>At Accessible Design Co, we believe that design should be inclusive. Our team is dedicated to creating solutions that cater to all users, regardless of their abilities.</p>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Web Accessibility Audits</h3>
+                    <p>We evaluate your website for accessibility compliance and provide actionable recommendations.</p>
+                </div>
+                <div class="service-item">
+                    <h3>User Experience Design</h3>
+                    <p>Our UX design services focus on creating intuitive and accessible user experiences.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Training & Workshops</h3>
+                    <p>We offer training sessions to help your team understand and implement accessibility best practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <form aria-labelledby="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-help">
+                <span id="name-help" class="visually-hidden">Please enter your full name.</span>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-help">
+                <span id="email-help" class="visually-hidden">Please enter a valid email address.</span>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+                <span id="message-help" class="visually-hidden">Please enter your message here.</span>
+                
+                <button type="submit">Send Message</button>
+                <span class="form-status visually-hidden" id="form-status"></span>
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Accessible Design Co. All rights reserved.</p>
+    </footer>
+</body>
+</html>
