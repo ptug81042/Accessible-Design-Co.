@@ -1,3 +1,34 @@
+# Accessible Design Co
+
+This project features a responsive, accessible website for Accessible Design Co.
+
+## Features
+
+- Responsive navigation menu with a hamburger icon for mobile devices
+- Hamburger menu is pure CSS (no JavaScript required)
+- Navigation menu slides in from the right on mobile and can be toggled open/closed
+- "Get in Touch" button and hero section content are aligned to the left for improved layout and accessibility
+- Accessible color contrast and semantic HTML
+
+## Usage
+
+1. Open `index.html` in your browser.
+2. On mobile or small screens, click the hamburger icon (top right) to open or close the navigation menu.
+3. The "Get in Touch" button is positioned on the left side of the hero section.
+
+## Customization
+
+- To change the hero background, update the `background` property in `.hero` in `css/style.css`.
+- To adjust navigation links, edit the `<ul class="nav-links">` in `index.html`.
+
+## Accessibility
+
+- Uses semantic HTML elements and ARIA attributes.
+- High color contrast for readability.
+- Keyboard and screen reader friendly navigation.
+
+---
+
 # Accessible Design Co.
 
 ## Overview
