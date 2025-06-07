@@ -12,7 +12,11 @@
             <div class="logo">
                 <h1>Accessible Design Co</h1>
             </div>
-            <ul class="nav-links">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open main menu" />
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+                <span class="hamburger"></span>
+            </label>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
@@ -75,5 +79,16 @@
     <footer role="contentinfo">
         <p>&copy; 2025 Accessible Design Co. All rights reserved.</p>
     </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', function() {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+            navToggle.setAttribute('aria-expanded', !expanded);
+            navLinks.classList.toggle('nav-open');
+        });
+    </script>
 </body>
 </html>

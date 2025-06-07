@@ -25,7 +25,7 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: #222; /* Improved contrast */
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
@@ -40,10 +40,16 @@ nav a:focus {
     background: url('../images/hero-bg.jpg') no-repeat center center/cover;
     height: 60vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Align content to the left */
     color: white;
-    text-align: center;
+    text-align: left;        /* Align text to the left */
+    padding-left: 3rem;      /* Add some left padding */
+}
+
+.cta-button {
+    align-self: flex-start;  /* Align button to the left */
 }
 
 .about,
@@ -109,18 +115,104 @@ footer {
     padding: 1rem;
 }
 
+.nav-toggle {
+    display: none;
+}
+
+/* Hamburger styles */
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    padding: 1rem;
+    z-index: 1103;
+    background: transparent; /* Ensure no background */
+    box-shadow: none;        /* Remove any shadow */
+    border: none;            /* Remove any border */
+}
+.hamburger {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #222;
+    position: relative;
+    border-radius: 2px;
+    background: #222;        /* Only the lines are colored */
+}
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #222;
+    position: absolute;
+    left: 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+.hamburger::before {
+    top: -9px;
+}
+.hamburger::after {
+    top: 9px;
+}
+
+/* Overlay for menu */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 1100;
+}
+.menu-overlay.active {
+    display: block;
+}
+
 @media (max-width: 768px) {
     nav {
+        flex-direction: row;
+        position: relative;
+    }
+    .logo {
+        z-index: 1102;
+    }
+    .nav-links {
+        display: flex;
         flex-direction: column;
+        background: #fff;
+        position: fixed;
+        top: 0;
+        right: -220px;
+        width: 220px;
+        height: 100vh;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+        z-index: 1102;
+        padding-top: 4rem;
+        gap: 0;
+        transition: right 0.3s;
     }
-
-    .hero {
-        height: 40vh;
+    .nav-links li {
+        border-bottom: 1px solid #eee;
     }
-
-    .about,
-    .services,
-    .contact {
-        padding: 1rem;
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+    /* Show menu when checkbox is checked */
+    .nav-toggle:checked ~ .nav-links {
+        right: 0;
+    }
+    /* Optional: style hamburger when open */
+    .nav-toggle:checked + .nav-toggle-label .hamburger {
+        background: transparent;
+    }
+    .nav-toggle:checked + .nav-toggle-label .hamburger::before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .nav-toggle:checked + .nav-toggle-label .hamburger::after {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    .nav-toggle-label {
+        display: block;
     }
 }
